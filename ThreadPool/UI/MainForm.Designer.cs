@@ -99,6 +99,7 @@
             this.buttonEmptyTask.TabIndex = 5;
             this.buttonEmptyTask.Text = "Пустая задача";
             this.buttonEmptyTask.UseVisualStyleBackColor = true;
+            this.buttonEmptyTask.Visible = false;
             this.buttonEmptyTask.Click += new System.EventHandler(this.buttonEmptyTask_Click);
             // 
             // buttonDivideByZeroTask
@@ -110,6 +111,8 @@
             this.buttonDivideByZeroTask.TabIndex = 6;
             this.buttonDivideByZeroTask.Text = "Деление на 0";
             this.buttonDivideByZeroTask.UseVisualStyleBackColor = true;
+            this.buttonDivideByZeroTask.Visible = false;
+            this.buttonDivideByZeroTask.Click += new System.EventHandler(this.buttonDivideByZeroTask_Click);
             // 
             // labelCopy
             // 
@@ -120,6 +123,7 @@
             this.labelCopy.Size = new System.Drawing.Size(169, 20);
             this.labelCopy.TabIndex = 7;
             this.labelCopy.Text = "Копирование файла:";
+            this.labelCopy.Visible = false;
             // 
             // buttonFile
             // 
@@ -130,6 +134,7 @@
             this.buttonFile.TabIndex = 8;
             this.buttonFile.Text = "Файл";
             this.buttonFile.UseVisualStyleBackColor = true;
+            this.buttonFile.Visible = false;
             // 
             // buttonCopyTo
             // 
@@ -140,6 +145,7 @@
             this.buttonCopyTo.TabIndex = 9;
             this.buttonCopyTo.Text = "Куда";
             this.buttonCopyTo.UseVisualStyleBackColor = true;
+            this.buttonCopyTo.Visible = false;
             // 
             // buttonCopy
             // 
@@ -150,6 +156,7 @@
             this.buttonCopy.TabIndex = 10;
             this.buttonCopy.Text = "Копировать";
             this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Visible = false;
             // 
             // openFileDialog1
             // 

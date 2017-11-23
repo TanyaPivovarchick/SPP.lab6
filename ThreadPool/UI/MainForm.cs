@@ -58,5 +58,11 @@ namespace UI
             MyTask testTask = new MyTask(AllTasks.EmptyTask, null);
             threadPool.AddTaskInQueue(testTask);
         }
+
+        private void buttonDivideByZeroTask_Click(object sender, EventArgs e)
+        {
+            MyTask testTask = new MyTask(AllTasks.DivideByZeroTask, null);
+            threadPool.AddTaskInQueue(testTask);
+        }
     }
 }

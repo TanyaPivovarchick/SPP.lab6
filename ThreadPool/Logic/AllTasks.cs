@@ -13,5 +13,12 @@ namespace Logic
         {
             Thread.Sleep(1000);
         }
+
+        public static void DivideByZeroTask(object obj = null)
+        {
+            int a = 1, b = 0;
+            int c = a / b;
+            Console.WriteLine(c);
+        }
     }
 }

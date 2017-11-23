@@ -139,7 +139,14 @@ namespace Logic
 
         private void ProcessingTask(MyTask task)
         {
-            task.callback(task.state);
+            try
+            {
+                task.callback(task.state);
+            }
+            catch (Exception ex)
+            {
+                logger.Add("Ошибка выполнения задачи: " + ex.Message);
+            }
         }
     }
 }
