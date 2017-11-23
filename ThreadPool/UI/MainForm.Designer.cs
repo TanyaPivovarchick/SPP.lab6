@@ -35,7 +35,7 @@
             this.textBoxMax = new System.Windows.Forms.TextBox();
             this.buttonEmptyTask = new System.Windows.Forms.Button();
             this.buttonDivideByZeroTask = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelCopy = new System.Windows.Forms.Label();
             this.buttonFile = new System.Windows.Forms.Button();
             this.buttonCopyTo = new System.Windows.Forms.Button();
             this.buttonCopy = new System.Windows.Forms.Button();
@@ -72,6 +72,7 @@
             this.buttonCreatePool.TabIndex = 2;
             this.buttonCreatePool.Text = "Создать пул потоков";
             this.buttonCreatePool.UseVisualStyleBackColor = true;
+            this.buttonCreatePool.Click += new System.EventHandler(this.buttonCreatePool_Click);
             // 
             // textBoxMin
             // 
@@ -98,6 +99,7 @@
             this.buttonEmptyTask.TabIndex = 5;
             this.buttonEmptyTask.Text = "Пустая задача";
             this.buttonEmptyTask.UseVisualStyleBackColor = true;
+            this.buttonEmptyTask.Click += new System.EventHandler(this.buttonEmptyTask_Click);
             // 
             // buttonDivideByZeroTask
             // 
@@ -109,15 +111,15 @@
             this.buttonDivideByZeroTask.Text = "Деление на 0";
             this.buttonDivideByZeroTask.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // labelCopy
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Копирование файла:";
+            this.labelCopy.AutoSize = true;
+            this.labelCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCopy.Location = new System.Drawing.Point(12, 144);
+            this.labelCopy.Name = "labelCopy";
+            this.labelCopy.Size = new System.Drawing.Size(169, 20);
+            this.labelCopy.TabIndex = 7;
+            this.labelCopy.Text = "Копирование файла:";
             // 
             // buttonFile
             // 
@@ -132,7 +134,7 @@
             // buttonCopyTo
             // 
             this.buttonCopyTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCopyTo.Location = new System.Drawing.Point(283, 138);
+            this.buttonCopyTo.Location = new System.Drawing.Point(283, 139);
             this.buttonCopyTo.Name = "buttonCopyTo";
             this.buttonCopyTo.Size = new System.Drawing.Size(82, 31);
             this.buttonCopyTo.TabIndex = 9;
@@ -142,9 +144,9 @@
             // buttonCopy
             // 
             this.buttonCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCopy.Location = new System.Drawing.Point(371, 137);
+            this.buttonCopy.Location = new System.Drawing.Point(371, 139);
             this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(132, 33);
+            this.buttonCopy.Size = new System.Drawing.Size(132, 31);
             this.buttonCopy.TabIndex = 10;
             this.buttonCopy.Text = "Копировать";
             this.buttonCopy.UseVisualStyleBackColor = true;
@@ -165,7 +167,7 @@
             this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.buttonCopyTo);
             this.Controls.Add(this.buttonFile);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelCopy);
             this.Controls.Add(this.buttonDivideByZeroTask);
             this.Controls.Add(this.buttonEmptyTask);
             this.Controls.Add(this.textBoxMax);
@@ -189,7 +191,7 @@
         private System.Windows.Forms.TextBox textBoxMax;
         private System.Windows.Forms.Button buttonEmptyTask;
         private System.Windows.Forms.Button buttonDivideByZeroTask;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelCopy;
         private System.Windows.Forms.Button buttonFile;
         private System.Windows.Forms.Button buttonCopyTo;
         private System.Windows.Forms.Button buttonCopy;

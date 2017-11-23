@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    interface IMyThreadPool
+    public interface IMyThreadPool
     {
         void SetThreadPoolСharacteristics(int minCountOfThreads, int maxCountOfThreads);
 

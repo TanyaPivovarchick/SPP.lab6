@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    class MyTask
+    public class MyTask
     {
         public delegate void CallbackDelegate(object state);
 

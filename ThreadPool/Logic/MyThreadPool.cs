@@ -18,6 +18,8 @@ namespace Logic
         private object dictionarySync = new object();
         private object queueSync = new object();
 
+        private Logger logger = new Logger();
+
         private Queue<MyTask> queueOfTasks = new Queue<MyTask>();
         private List<int> listOfThreads = new List<int>();
 
@@ -28,6 +30,8 @@ namespace Logic
         public MyThreadPool(int min, int max)
         {
             SetThreadPoolСharacteristics(min, max);
+
+            logger.ClearFile();
 
             for (int i = 0; i < MinCountOfThreads; i++)
             {
@@ -43,6 +47,8 @@ namespace Logic
 
         public void AddTaskInQueue(MyTask task)
         {
+            logger.Add("Добавлена новая задача");
+
             lock (queueSync)
             {
                 queueOfTasks.Enqueue(task);
@@ -59,6 +65,8 @@ namespace Logic
                 listOfThreads.Add(newThread.Id);
             }
 
+            logger.Add("Создан поток с идентификатором = " + newThread.Id);
+
             newThread.Start();
         }
 
@@ -69,10 +77,11 @@ namespace Logic
 
             do
             {
+                if (queueOfTasks.Count() >= MAX_COUNT_OF_TASKS && GetCountOfThreads() == MaxCountOfThreads)
+                    logger.Add("Достигнуто максимальное количество потоков");
+
                 if (queueOfTasks.Count() >= MAX_COUNT_OF_TASKS && GetCountOfThreads() < MaxCountOfThreads)
-                {
                     AddNewThreadsInDictionary();
-                }
 
                 currentTask = TakeTaskFromQueue();
 
@@ -95,6 +104,7 @@ namespace Logic
                     {
                         if (GetCountOfThreads() > MinCountOfThreads)
                         {
+                            logger.Add("Поток с номером " + Task.CurrentId + " остановлен");
                             lock (dictionarySync)
                             {
                                 listOfThreads.Remove((int)Task.CurrentId);
