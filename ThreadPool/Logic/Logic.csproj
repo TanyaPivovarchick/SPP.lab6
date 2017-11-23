@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllTasks.cs" />
+    <Compile Include="FileCopyData.cs" />
     <Compile Include="IMyThreadPool.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="MyTask.cs" />

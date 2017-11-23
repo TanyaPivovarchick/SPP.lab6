@@ -15,6 +15,9 @@ namespace UI
     {
         private IMyThreadPool threadPool;
 
+        private string filename;
+        private string pathTo;
+
         public MainForm()
         {
             InitializeComponent();
@@ -63,6 +66,32 @@ namespace UI
         {
             MyTask testTask = new MyTask(AllTasks.DivideByZeroTask, null);
             threadPool.AddTaskInQueue(testTask);
+        }
+
+        private void buttonFile_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            filename = openFileDialog1.FileName;
+        }
+
+        private void buttonCopyTo_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+            pathTo = folderBrowserDialog1.SelectedPath;
+        }
+
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            if (filename != "" && pathTo != "")
+            {
+                string newFilename = pathTo + '\\' + filename.Substring(filename.LastIndexOf('\\') + 1);
+                FileCopyData state = new FileCopyData(filename, newFilename);
+
+                MyTask copyFileTask = new MyTask(AllTasks.CopyFileTask, state);
+                threadPool.AddTaskInQueue(copyFileTask);
+            }
+            else
+                MessageBox.Show("Введите верные пути");
         }
     }
 }

@@ -40,7 +40,7 @@
             this.buttonCopyTo = new System.Windows.Forms.Button();
             this.buttonCopy = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -135,6 +135,7 @@
             this.buttonFile.Text = "Файл";
             this.buttonFile.UseVisualStyleBackColor = true;
             this.buttonFile.Visible = false;
+            this.buttonFile.Click += new System.EventHandler(this.buttonFile_Click);
             // 
             // buttonCopyTo
             // 
@@ -146,6 +147,7 @@
             this.buttonCopyTo.Text = "Куда";
             this.buttonCopyTo.UseVisualStyleBackColor = true;
             this.buttonCopyTo.Visible = false;
+            this.buttonCopyTo.Click += new System.EventHandler(this.buttonCopyTo_Click);
             // 
             // buttonCopy
             // 
@@ -157,14 +159,11 @@
             this.buttonCopy.Text = "Копировать";
             this.buttonCopy.UseVisualStyleBackColor = true;
             this.buttonCopy.Visible = false;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // openFileDialog2
-            // 
-            this.openFileDialog2.FileName = "openFileDialog2";
             // 
             // MainForm
             // 
@@ -203,7 +202,7 @@
         private System.Windows.Forms.Button buttonCopyTo;
         private System.Windows.Forms.Button buttonCopy;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 
